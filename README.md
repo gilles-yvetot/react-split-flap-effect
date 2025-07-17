@@ -1,10 +1,10 @@
-# Modern Split-Flap Display
+# React Split-Flap Effect
 
 A modern React component library that creates a split-flap display effect (like old airport departure boards) with smooth CSS animations.
 
 ## Features
 
-- ✨ **Modern Stack**: Built with latest React 19, TypeScript, and Tailwind CSS
+- ✨ **Modern Stack**: Built with latest React, TypeScript, and Tailwind CSS
 - 🎬 **Smooth Animations**: CSS-powered split-flap animations with customizable timing
 - 🔧 **Flexible Display Modes**: Numeric, alphanumeric, and word-based displays
 - 🎨 **Customizable Styling**: Full Tailwind CSS integration with custom themes
@@ -12,22 +12,85 @@ A modern React component library that creates a split-flap display effect (like 
 - 📱 **Responsive**: Works great on all device sizes
 - ♿ **Accessible**: Proper ARIA labels and semantic HTML
 
-## Installation & Usage
+## Installation
 
-This is a self-contained demo project. To run it:
+```bash
+npm install react-split-flap-effect
+```
+
+## Quick Start
+
+```tsx
+import React from "react";
+import { FlapDisplay, Presets } from "react-split-flap-effect";
+
+function App() {
+  return (
+    <div>
+      {/* Basic numeric display */}
+      <FlapDisplay value="123456" chars={Presets.NUM} length={6} />
+
+      {/* Alphanumeric display with custom characters */}
+      <FlapDisplay
+        chars={Presets.ALPHANUM + ",."}
+        length={10}
+        value="HELLO WORLD"
+        className="my-custom-class"
+      />
+    </div>
+  );
+}
+```
+
+## Usage Examples
+
+### Basic Numeric Display
+
+```tsx
+<FlapDisplay value="007" chars={Presets.NUM} length={3} timing={50} />
+```
+
+### Message Display
+
+```tsx
+<FlapDisplay
+  chars={Presets.ALPHANUM + ",.!?"}
+  length={20}
+  value="FLIGHT BOARDING NOW"
+  className="text-lg font-mono"
+/>
+```
+
+### Custom Character Set
+
+```tsx
+<FlapDisplay
+  chars=" ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  length={8}
+  value="WELCOME"
+  padMode="start"
+/>
+```
+
+## Development
+
+To work on this library:
 
 ```bash
 # Install dependencies
 npm install
 
-# Start development server
-npm start
+# Start development server (for testing)
+npm run dev
+
+# Build the library
+npm run build
 
 # Run tests
 npm test
 
-# Build for production
-npm run build
+# Build library and watch for changes
+npm run build:watch
 ```
 
 ## Component API

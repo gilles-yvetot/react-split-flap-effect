@@ -1,8 +1,8 @@
 {
-  "name": "modern-split-flap-display",
-  "version": "1.0.0",
+  "name": "react-split-flap-effect",
+  "version": "2.0.0",
   "description": "A modern React split-flap display component with TypeScript and Tailwind CSS",
-  "author": "Modern Split-Flap Team",
+  "author": "Gilles Yvetot",
   "license": "MIT",
   "keywords": [
     "react",
@@ -10,22 +10,30 @@
     "display",
     "animation",
     "typescript",
-    "tailwind"
+    "tailwind",
+    "component",
+    "ui"
   ],
-  "homepage": "https://github.com/your-org/modern-split-flap-display",
+  "homepage": "https://github.com/gilles-yvetot/react-split-flap-effect",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/modern-split-flap-display.git"
+    "url": "https://github.com/gilles-yvetot/react-split-flap-effect.git"
   },
-  "main": "dist/lib.js",
-  "module": "dist/lib.esm.js",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "types": "dist/lib.d.ts",
   "files": [
     "dist",
-    "src"
+    "README.md"
   ],
-  "private": true,
-  "dependencies": {
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-typescript": "^12.1.1",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
@@ -34,22 +42,30 @@
     "@types/node": "^16.18.126",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0",
     "react-scripts": "5.0.1",
+    "rollup": "^4.29.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "tailwindcss": "^3.4.17",
+    "tslib": "^2.8.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "build:lib": "tsc --build --verbose",
+    "dev": "react-scripts start",
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w",
+    "build:app": "react-scripts build",
     "test": "react-scripts test",
     "test:ci": "react-scripts test --coverage --watchAll=false",
-    "eject": "react-scripts eject",
     "lint": "eslint src --ext .ts,.tsx",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -68,13 +84,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6"
-  },
-  "peerDependencies": {
-    "react": ">=18.0.0",
-    "react-dom": ">=18.0.0"
   }
 }
