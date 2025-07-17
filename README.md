@@ -14,9 +14,29 @@ A modern React component library that creates a split-flap display effect (like 
 
 ## Installation
 
+### From npm
+
 ```bash
 npm install react-split-flap-effect
 ```
+
+### From GitHub (latest)
+
+Install directly from GitHub to get the latest version:
+
+```bash
+npm install github:gilles-yvetot/react-split-flap-effect
+```
+
+### From GitHub (specific release)
+
+Install a specific tagged release:
+
+```bash
+npm install github:gilles-yvetot/react-split-flap-effect#v2.0.0
+```
+
+> **Note**: Installing from GitHub requires the repository to have built files. Our GitHub Actions automatically build and commit the `dist` folder on releases.
 
 ## Quick Start
 
