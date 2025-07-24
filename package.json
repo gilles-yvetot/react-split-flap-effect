@@ -1,7 +1,6 @@
 {
   "name": "react-split-flap-effect",
   "version": "2.0.0",
-  "type": "module",
   "description": "A modern React split-flap display component with TypeScript and Tailwind CSS",
   "author": "Gilles Yvetot",
   "license": "MIT",
