@@ -17,7 +17,7 @@ A modern React component library that creates a split-flap display effect (like 
 ### From npm
 
 ```bash
-npm install react-split-flap-effect
+npm install split-flap-lib
 ```
 
 ### From GitHub (latest)
@@ -42,7 +42,8 @@ npm install github:gilles-yvetot/react-split-flap-effect#v2.0.0
 
 ```tsx
 import React from "react";
-import { FlapDisplay, Presets } from "react-split-flap-effect";
+import { FlapDisplay, Presets } from "split-flap-lib";
+// CSS is automatically included - no separate import needed!
 
 function App() {
   return (
