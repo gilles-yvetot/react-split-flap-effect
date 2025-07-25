@@ -1,18 +1,53 @@
-# Using split-flap-lib in Your Project
+# Usage Guide
+
+This guide provides detailed instructions on how to use the React Split-Flap Effect library in your projects.
 
 ## Installation
 
-Install the library using npm, yarn, or pnpm:
-
 ```bash
-# npm
 npm install split-flap-lib
-
-# yarn
+# or
 yarn add split-flap-lib
+```
 
-# pnpm
-pnpm add split-flap-lib
+## CSS Import (Required!)
+
+The library requires CSS to be imported for proper styling. After building with the updated configuration, you need to import the CSS file:
+
+```javascript
+// Import the CSS along with the component
+import 'split-flap-lib/dist/index.css';
+import { FlapDisplay } from 'split-flap-lib';
+```
+
+If the CSS is not loading, here are some solutions:
+
+### Solution 1: Direct CSS Import
+Make sure you're importing the CSS file from the dist folder:
+
+```javascript
+import 'split-flap-lib/dist/index.css';
+```
+
+### Solution 2: Copy CSS to Your Project
+If the above doesn't work, you can copy the CSS directly into your project:
+
+1. Copy the contents of `node_modules/split-flap-lib/dist/index.css`
+2. Add it to your project's CSS file or create a new CSS file
+3. Import that CSS file in your application
+
+### Solution 3: If Using Tailwind CSS
+If your project uses Tailwind CSS, you can add the library to your Tailwind content configuration to ensure the classes are included:
+
+```javascript
+// tailwind.config.js
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/split-flap-lib/dist/**/*.js"
+  ],
+  // ... rest of your config
+}
 ```
 
 ## Basic Usage
@@ -21,7 +56,7 @@ pnpm add split-flap-lib
 
 ```tsx
 import { FlapDisplay } from "split-flap-lib";
-// CSS is automatically included - no separate import needed!
+import "split-flap-lib/dist/index.css"; // Required for styles!
 ```
 
 ### 2. Use in Your React App
@@ -174,7 +209,13 @@ import { FlapDisplay, presets } from 'split-flap-lib';
 
 ### CSS not working
 
-The CSS is automatically injected when you import the component - no separate CSS import is needed!
+Make sure you've imported the CSS file:
+
+```javascript
+import "split-flap-lib/dist/index.css";
+```
+
+If styles are still not loading, see the "CSS Import (Required!)" section above for additional solutions.
 
 ### TypeScript errors
 

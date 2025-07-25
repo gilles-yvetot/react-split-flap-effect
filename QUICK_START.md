@@ -20,6 +20,7 @@ npm install split-flap-lib
 ```tsx
 import React, { useState, useEffect } from "react";
 import { FlapDisplay, Presets } from "split-flap-lib";
+import "split-flap-lib/dist/index.css"; // Required for split-flap styles
 import "./App.css";
 
 function App() {

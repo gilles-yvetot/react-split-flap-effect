@@ -38,12 +38,23 @@ npm install github:gilles-yvetot/react-split-flap-effect#v2.0.0
 
 > **Note**: Installing from GitHub requires the repository to have built files. Our GitHub Actions automatically build and commit the `dist` folder on releases.
 
+## CSS Import (Required!)
+
+After installation, you **must** import the CSS file for the component to display correctly:
+
+```javascript
+import "split-flap-lib/dist/index.css";
+```
+
+Without this import, the components will render but animations and styles will be missing.
+
 ## Quick Start
 
 ```tsx
 import React from "react";
 import { FlapDisplay, Presets } from "split-flap-lib";
-// CSS is automatically included - no separate import needed!
+// IMPORTANT: Import the CSS file!
+import "split-flap-lib/dist/index.css";
 
 function App() {
   return (

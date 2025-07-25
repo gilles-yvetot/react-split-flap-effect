@@ -41,8 +41,7 @@ export default {
       ],
     }),
     postcss({
-      extract: false,
-      inject: true,
+      extract: true,
       minimize: true,
     }),
   ],
