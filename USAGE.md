@@ -16,20 +16,22 @@ The library requires CSS to be imported for proper styling. After building with 
 
 ```javascript
 // Import the CSS along with the component
-import 'split-flap-lib/dist/index.css';
-import { FlapDisplay } from 'split-flap-lib';
+import "split-flap-lib/dist/index.css";
+import { FlapDisplay } from "split-flap-lib";
 ```
 
 If the CSS is not loading, here are some solutions:
 
 ### Solution 1: Direct CSS Import
+
 Make sure you're importing the CSS file from the dist folder:
 
 ```javascript
-import 'split-flap-lib/dist/index.css';
+import "split-flap-lib/dist/index.css";
 ```
 
 ### Solution 2: Copy CSS to Your Project
+
 If the above doesn't work, you can copy the CSS directly into your project:
 
 1. Copy the contents of `node_modules/split-flap-lib/dist/index.css`
@@ -37,6 +39,7 @@ If the above doesn't work, you can copy the CSS directly into your project:
 3. Import that CSS file in your application
 
 ### Solution 3: If Using Tailwind CSS
+
 If your project uses Tailwind CSS, you can add the library to your Tailwind content configuration to ensure the classes are included:
 
 ```javascript
@@ -44,10 +47,10 @@ If your project uses Tailwind CSS, you can add the library to your Tailwind cont
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
-    "./node_modules/split-flap-lib/dist/**/*.js"
+    "./node_modules/split-flap-lib/dist/**/*.js",
   ],
   // ... rest of your config
-}
+};
 ```
 
 ## Basic Usage
